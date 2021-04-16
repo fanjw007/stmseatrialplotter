@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto;
+            /*border-width: 1px;
+            border-color: green;
+            border-style: solid;*/
+        }
+        h2 {
+            line-height: 0em;
+        }
+        h3 {
+            line-height: 0.5em;
+        }
+        #divcontainer {
+            position: relative;
+            width: 210mm;
+            height: 297mm;
+            overflow: hidden;
+            /*border-width: 2px;
+            border-color: black;
+            border-style: solid;*/
+        }
+        #divpadded {
+            position: absolute;
+            margin: 1.27cm 1.27cm 1.27cm 1.27cm;
+            width: 184.6mm;
+            height: 271.6mm;
+            overflow: hidden;
+            /*border-width: 2px;
+            border-color: blue;
+            border-style: solid;*/
+        }
+        #divstlogo {
+            position: absolute;
+            width: 55mm;
+            height: 1.27cm;
+            left: 1.27cm;
+            top: 0mm;
+            overflow: hidden; 
+            /*border-width: 2px;
+            border-color: red;
+            border-style: solid;*/
+        }
+        #divproject {
+            position: absolute;
+            width: 55mm;
+            height: 0.5cm;
+            margin-top: 0.385cm;
+            right: 1.17cm;
+            top: 0mm;
+            text-align: right;
+            overflow: hidden; 
+            /*border-width: 2px;
+            border-color: red;
+            border-style: solid;*/   
+        }
+        #divheader {
+            position: absolute;
+            width: 100%;
+            height: 7%;
+            top: 0%;
+            left: 0%;
+            overflow: hidden;   
+        }
+        #divturngraph {
+            position: absolute;
+            width: 100%;
+            height: 78%;
+            top: 7%;
+            overflow: hidden;   
+        }
+        #divdatatable {
+            position: absolute;
+            width: 35%;
+            height: 15%;
+            top: 85%;
+            left: 0.75%;
+            overflow: hidden;
+            font-size: 0.95em;
+            /*border-width: 2px;
+            border-color: red;
+            border-style: solid;*/
+        }
+        #divspeedgraph {
+            position: absolute;
+            width: 64%;
+            height: 15%;
+            top: 85%;
+            right: 0;
+            overflow: hidden;   
+            justify-content: center;
+            /*border-width: 2px;
+            border-color: red;
+            border-style: solid;*/
+        }
+        table {
+            border-collapse: collapse;
+            text-align: right;
+        }
+        table tr {
+            border-bottom: 1px solid;
+        }
+        td {
+            padding: 0.45em;
+        }
+    </style>
+    
+    <title>{{ title }}</title>
+</head>
+<body>
+    <div id="divcontainer">
+    
+        <div id="divstlogo"><img src="logos/ST Engineering_Web_Eng_rgb_crop.png"></div>
+        <div id="divproject">{{ project_code }}</div>
+        
+        <div id="divpadded">
+            <div id="divheader">
+                <h2>MANOEUVRING SEA TRIAL DATA</h2>
+                <h3>Turning Circle (PORT) @ 50% MCR</h3>
+                <hr/>
+            </div>
+            
+            <div id="divturngraph">
+                <img src={{ turning_circle_plot }}>
+            </div>
+            
+            <div id="divdatatable">
+                {{ datatable }}
+            </div>
+            <div id="divspeedgraph">
+                <img src={{ speed_time_plot }}>
+            </div>
+    </div>
+    </div> 
+</body>
+</html>
